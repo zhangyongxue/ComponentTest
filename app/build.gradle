@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+//1. 定义 config 变量
+def config = rootProject.ext
+
+android {
+    compileSdkVersion config.android.compileSdkVersion
+    defaultConfig {
+        applicationId "zyx.componenttest"
+        minSdkVersion config.android.minSdkVersion
+        targetSdkVersion config.android.targetSdkVersion
+        versionCode config.android.versionCode
+        versionName config.android.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api config.dependencies["support-v7"]
+    implementation config.dependencies["constraint-layout"]
+    testImplementation config.dependencies["junit"]
+    if (!isModule.toBoolean()) {
+        implementation project(':module_chat')
+        implementation project(':module_main')
+    }
+    implementation project(':common')
+}

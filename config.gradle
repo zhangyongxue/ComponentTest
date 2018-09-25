@@ -1,0 +1,26 @@
+ext {
+    android = [
+            compileSdkVersion : 27,
+            buildToolsVersion : "27.0.2",
+            minSdkVersion : 21,
+            targetSdkVersion : 27,
+            versionCode      : 50,
+            versionName      : "5.0.0.18080701"
+    ]
+
+    version = [
+            androidSupportSdkVersion: "27.1.1"
+    ]
+
+    dependencies = [
+            // supprot
+            "support-v4"        : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
+            "support-v7"        : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
+            "constraint-layout" : 'com.android.support.constraint:constraint-layout:1.1.2',
+
+            // tools
+            "arouter-api" : 'com.alibaba:arouter-api:1.2.4',
+            "arouter-compiler" : 'com.alibaba:arouter-compiler:1.1.4',
+            "junit"             : 'junit:junit:4.12'
+    ]
+}

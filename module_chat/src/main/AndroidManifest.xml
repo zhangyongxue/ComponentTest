@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="zyx.module.chat" >
+
+
+    <application>
+        <activity android:name=".ModuleChatAcitivity">
+        </activity>
+
+        <activity android:name=".ModuleChatLoginActivity">
+        </activity>
+
+        <activity android:name=".TestActivity">
+        </activity>
+    </application>
+</manifest>
